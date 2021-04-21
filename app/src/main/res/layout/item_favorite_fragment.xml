@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.music_app.favoriteFragment.FavoriteModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:background="#959090"
+                android:id="@+id/img_item_fragmentHome"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bong_hoa_khong_thuoc_ve_ta"
+                app:setImageSongFavorite="@{data.linkImage}" />
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:background="#FBF3F3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Bông hoa không thuộc về ta"
+                    android:textColor="#6200EE"
+                    android:textSize="18sp"
+                    app:setNameSongFavorite="@{data.nameMusic}" />
+
+                <TextView
+                    android:background="#FBF3F3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Doãn trí bình"
+                    android:textColor="#040404"
+                    android:textSize="12sp"
+                    app:setNameSongFavorite="@{data.artist}" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

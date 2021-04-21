@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.music_app.playsong.Song" />
+    </data>
+
+    <RelativeLayout
+        android:background="#5FE2F3"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".playsong.MainActivity">
+
+        <TextView
+            app:setNamSong="@{data.title}"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:id="@+id/tv_songName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="Tên bài hát" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            app:setImageSong="@{data.imageSong}"
+            app:civ_border_width="2dp"
+            android:layout_below="@+id/tv_songName"
+            android:layout_marginTop="90dp"
+            android:scaleType="centerCrop"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:src="@drawable/mat_troi_cua_em"
+            android:id="@+id/img_song"/>
+
+        <TextView
+            android:id="@+id/tv_timeRun"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="16sp"
+            android:layout_above="@+id/seekBar"
+            android:layout_marginLeft="20sp"
+            android:layout_marginStart="20sp" />
+        <TextView
+            android:id="@+id/tv_sum_time"
+            android:layout_marginBottom="4dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="16sp"
+            android:layout_above="@+id/seekBar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20sp" />
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_above="@+id/rlt"/>
+
+
+        <RelativeLayout
+            android:layout_marginBottom="10dp"
+            android:id="@+id/rlt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <ImageButton
+                android:backgroundTint="#5FE2F3"
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_baseline_play_arrow_24"
+                />
+            <ImageButton
+                android:backgroundTint="#5FE2F3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btn_play"
+                android:src="@drawable/ic_baseline_fast_forward_24"
+                android:id="@+id/btn_next"
+                android:layout_toEndOf="@+id/btn_play" />
+            <ImageButton
+                android:backgroundTint="#5FE2F3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_fast_rewind_24"
+                android:layout_toLeftOf="@+id/btn_play"
+                android:id="@+id/btn_previous"
+                android:layout_toStartOf="@+id/btn_play" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_favorite_border_24"
+                android:backgroundTint="#5FE2F3"
+                android:layout_toRightOf="@+id/btn_next"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/btn_favorite"
+                android:layout_toEndOf="@+id/btn_next"
+                android:layout_marginStart="50dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
+
