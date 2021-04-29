@@ -1,4 +1,4 @@
-package com.example.music_app;
+package com.example.music_app.activity;
 
 import android.os.Bundle;
 
@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.music_app.R;
 import com.example.music_app.favoriteFragment.FavoriteFragment;
 import com.example.music_app.homeFragment.HomeFragment;
 
